@@ -1,0 +1,7 @@
+C:\Users\cheniri\source\repos\test_job\test_job\bin\Debug\test_job.exe.config
+C:\Users\cheniri\source\repos\test_job\test_job\bin\Debug\test_job.exe
+C:\Users\cheniri\source\repos\test_job\test_job\bin\Debug\test_job.pdb
+C:\Users\cheniri\source\repos\test_job\test_job\obj\Debug\test_job.csprojAssemblyReference.cache
+C:\Users\cheniri\source\repos\test_job\test_job\obj\Debug\test_job.csproj.CoreCompileInputs.cache
+C:\Users\cheniri\source\repos\test_job\test_job\obj\Debug\test_job.exe
+C:\Users\cheniri\source\repos\test_job\test_job\obj\Debug\test_job.pdb
