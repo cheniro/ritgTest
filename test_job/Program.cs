@@ -65,7 +65,7 @@ namespace test_job
                 if (rowValue != null)
                     data.Add(rowValue);
                 else
-                    break;
+                    break;///////
             }
 
             workbook.Close(false);
