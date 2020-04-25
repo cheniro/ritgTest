@@ -17,8 +17,8 @@ namespace test_job
             bool exit = false;
             while (!exit)
             {
-                Console.WriteLine("Выберите опцию:");
-                Console.WriteLine("Задание с массивом - 1\n" +
+                Console.WriteLine("Выберите опцию:\n" +
+                                  "Задание с массивом - 1\n" +
                                   "Задание с классом - 2\n" +
                                   "Выход - Любой другой символ");
                 option = Console.ReadLine();
@@ -43,7 +43,7 @@ namespace test_job
         {
             this.name = name;
         }
-        
+
         public void addParent(Tree parent)
         {
             this.parent = parent;
@@ -119,9 +119,9 @@ namespace test_job
                         dict.Add(temp[i], newItem);
                     }
             }
-            
+
             string selectVal = "";
-            do
+            while (true)
             {
                 Console.WriteLine("\nВыберите категорию:");
                 for (int i = 0; i < keys.Count; i++)
@@ -132,9 +132,11 @@ namespace test_job
 
                 if (Int32.TryParse(selectVal, out int index) && index < keys.Count && index >= 0)
                     Console.Write(dict[keys[index]].getStruct());
-                else if (selectVal != "q")
+                else if (selectVal == "q")
+                    break;
+                else
                     Console.WriteLine("Неверныее входные данные!");
-            } while (selectVal != "q");
+            }
         }
     }
 
@@ -173,13 +175,14 @@ namespace test_job
         {
             int index = startIndex;
             for (int i = startIndex + 1; i < letters.GetLength(1); i++)
-                if (letters[0, index] > letters[0, i])
-                    index = i;
-                else if (letters[0, index] == letters[0, i])
-                {
-                    index = i;
+            {
+                if (letters[0, index] < letters[0, i])
+                    continue;
+
+                index = i;
+                if (letters[0, index] == letters[0, i])
                     break;
-                }
+            }
             return index;
         }
 
@@ -197,16 +200,13 @@ namespace test_job
 
         static void printArray(ref char[,] letters)
         {
-            for (int t = 0; t < letters.GetLength(0); t++)
+            for (int i = 0; i < letters.GetLength(0); i++)
             {
-                for (int i = 0; i < letters.GetLength(1); i++)
-                    Console.Write(letters[t, i] + " ");
+                for (int t = 0; t < letters.GetLength(1); t++)
+                    Console.Write(letters[i, t] + " ");
                 Console.WriteLine("");
             }
             Console.WriteLine("");
         }
     }
-
-
-    
 }
